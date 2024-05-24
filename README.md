@@ -103,3 +103,14 @@ MiniCssExtractPlugin is used to create minified css
 We put packages in Dev dependencies when we need them during development
 
 Some of the plugins are not needed in production so we don’t add them to Dev dependencies.
+
+To support browser cache, a good approach is if the content of the file is changed, you create a new file and append the MD5 hash to the name
+
+```jsx
+output: {
+    filename: "bundle.[contenthash].js",
+    path: path.resolve(__dirname, "./dist"),
+  },
+```
+
+We. use CleanWebpackPlugin() to clean the dist folder everytime we run npm run build.
