@@ -14,7 +14,7 @@ class HelloWorldButton {
         }
        
         body.appendChild(button)
-        body.apd
+        
     }
 }
 
