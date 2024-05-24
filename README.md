@@ -19,42 +19,42 @@ module.exports = {
             {
                 test: /\.(png|jpg)$/,
                 type: 'asset/resource', //rules are associated when assets are to be imported
-		             parser: {
+		parser: {
                     dataUrlCondition: {
                         maxSize : 3*1024 //3kb
                     }
                 }
             },
             {
-				        test: /\.css/,
-				        use: [
-				            'style-loaded', 'css-loader'
-		        ]
-			      },
-			      {
-		        test: /\.scss/,
-		        use: [
-            'style-loader', 'css-loader', 'sass-loader'
-			        ]
-			      },
-			      {
-		        test: /\.js$/,
-		        exclude : /node_modules/,
-		        use: {
+		test: /\.css/,
+		use: [
+			'style-loaded', 'css-loader'
+ 		]
+            },
+            {
+		test: /\.scss/,
+		use: [
+            		'style-loader', 'css-loader', 'sass-loader'
+			]
+	     },
+             {
+		test: /\.js$/,
+		exclude : /node_modules/,
+		use: {
 	            loader: 'babel-loader',
 	            options: {
 	                presets: ['@babel/env'],
 	                plugins: ['@babel/plugin-proposal-class-properties']
 	            }
-			        }
-				      }
-			       ]
+		}
+		}
+	]
     },
     plugins: [
 	    new TerserPlugin(),
 	    new MiniCssExtractPlugin({
-        filename: 'styles.css'
-    })
+        	filename: 'styles.css'
+    		})
 	  ]
 }
 ```
