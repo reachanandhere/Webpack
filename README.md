@@ -138,3 +138,25 @@ new HtmlWebpackPlugin({
 ```
 
 Handlebars is used a template engine in webpack. It is used inside HtmlWebpackPlugin and creates the html file in dist folder
+
+—> mode changes the environment for production and developement
+
+When we use production, we only see the minified version of the code and it is harder to debug it
+
+mode = ‘production’
+
+In production, TerserPlugin is added by default
+Webpack-dev-server is used to keep the dev server running. HMR
+
+```jsx
+devServer: {
+    port: 9000,
+    static: {
+      directory: path.resolve(__dirname, "./dist")
+    },
+    devMiddleware: {
+      index: 'index.html',
+      writeToDisk: true
+    }
+  },
+```

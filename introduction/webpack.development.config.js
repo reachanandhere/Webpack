@@ -8,7 +8,7 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: '',
+    publicPath: '/static/',
   },
   mode: "development",
   devServer: {
@@ -17,7 +17,8 @@ module.exports = {
       directory: path.resolve(__dirname, "./dist")
     },
     devMiddleware: {
-      index: 'index.html'
+      index: 'index.html',
+      writeToDisk: true
     }
   },
   module: {
@@ -37,7 +38,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.hbs$/,
