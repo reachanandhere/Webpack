@@ -114,3 +114,27 @@ output: {
 ```
 
 We. use CleanWebpackPlugin() to clean the dist folder everytime we run npm run build.
+
+Same thing can be achieved through:
+
+```jsx
+output: {
+    filename: "bundle.[contenthash].js",
+    path: path.resolve(__dirname, "./dist"),
+    publicPath: 'dist/',
+    clean: true
+  },
+```
+
+HtmlWebpackPlugin is used to create index.html inside dist folder. As it will always point to correct bundle.js and styles.css having MD5
+
+```
+new HtmlWebpackPlugin({
+        title: 'Hello World',
+        filename: 'index.html',
+        template: 'src/index.hbs',
+        description: 'Some Description' 
+    })
+```
+
+Handlebars is used a template engine in webpack. It is used inside HtmlWebpackPlugin and creates the html file in dist folder
