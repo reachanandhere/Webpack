@@ -1,9 +1,10 @@
 import './hello-world-button.scss'
 class HelloWorldButton {
+    buttonCss = 'hello-world-button'
     render(){
         const button = document.createElement('button')
         button.innerHTML = 'Hello World!'
-        button.classList.add('hello-world-button')
+        button.classList.add(this.buttonCss)
         const body = document.querySelector('body')
         button.onclick=()=>{
             const p = document.createElement('p')

@@ -1,0 +1,15 @@
+.hello-world-button {
+  font-size: 20px;
+  padding: 7px 20px;
+  background: green;
+  color: white;
+  outline: none;
+}
+
+.hello-world-text {
+  font-size: 16px;
+  color: red;
+}
+h1 {
+  color: green;
+}
